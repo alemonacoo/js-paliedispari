@@ -1,8 +1,15 @@
 console.log("JS OK!");
 
-// ESERCIZIO 1
+// ESERCIZIO 1:
+//
 let word = prompt("Inserire una parola!");
-console.log(isPalindrome(word));
+
+if(isPalindrome(word)){
+    console.log(`La parola inserita "${word}" è palindroma!`);
+} else{
+    console.log(`La parola inserita NON è palindroma!`);
+}
+
 
 
 // Funzione isPalindrome per verificare se una parola è palindroma o meno
@@ -18,16 +25,46 @@ function isPalindrome(word){
 
 
 
+//ESERCIZIO 2:
+//
+let userNumber = parseInt(prompt("Inserire un numero"));
+let computerNumber = getRandomInteger(1,5);
+let oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random");
+let sum = userNumber + computerNumber;
+console.log('User Number: ' + userNumber);
+console.log('Computer Number: ' + computerNumber);
+console.log("User's choiche: " + oddEvenChoice);
 
-// let min = 1  // parseInt(prompt("Inserire numero minimo"));
-// let max = 5  // parseInt(prompt("Inserire numero massimo"));
-// console.log(getRandomInteger(min, max));
+
+if(oddEvenChoice === isOddEven(sum)){
+    console.log(sum);
+    console.log("USER WINS!!")
+
+    //Exception 1:
+} else if(isNaN(userNumber)){
+    console.log("Per favore, inserisci un numero corretto!")
+
+    // Exception 2:
+} else if (oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
+    console.log("Per favore, inserisci 'odd' o 'even' in modo corretto!");
 
 
-// //Funzione getRandomInteger 
-// function getRandomInteger(min, max){
-//     return Math.floor(Math.random() * (max - min + 1) + min); 
-// }
+} else{
+    console.log(sum);
+    console.log("COMPUTER WINS!!")
+}
+
+
+// Function isOddEven returns even or odd strings if number is even or odd
+function isOddEven(number){
+    return number % 2 === 0 ? 'even' : 'odd';
+}
+
+
+//Funcion getRandomInteger returns random integer between the specified values (inclusive)
+function getRandomInteger(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min); 
+}
 
 
 
