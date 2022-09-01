@@ -39,25 +39,25 @@ let computerNumber = getRandomInteger(1,5);
 //Prompt 2 + Exceptions
 let oddEvenChoice = ' ';
 while(oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
-    oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random");
+    oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random").toLowerCase();
     console.log(oddEvenChoice);
 }
 
 let sum = userNumber + computerNumber;
+
 console.log('User Number: ' + userNumber);
 console.log('Computer Number: ' + computerNumber);
 console.log("User's choiche: " + oddEvenChoice);
+console.log("Sum: " + sum);
 
-
+//Results:
 if(oddEvenChoice === isOddEven(sum)){
-    console.log(sum);
     console.log("USER WINS!!")
 } else{
-    console.log(sum);
     console.log("COMPUTER WINS!!")
 }
 
-
+// FUNCTIONS:
 // Function isOddEven returns even or odd strings if number is even or odd
 function isOddEven(number){
     return number % 2 === 0 ? 'even' : 'odd';
