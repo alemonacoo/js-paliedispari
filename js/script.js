@@ -2,10 +2,11 @@ console.log("JS OK!");
 
 // ESERCIZIO 1:
 //
-let word;
-while(word == null && isNaN(word)){
-    word = prompt("Inserire una parola!").toLowerCase();
+let word = ' ';
+while(word == null || !isNaN(word) || word == ' '){
+    word = prompt("Inserire una parola!");
 } 
+console.log("User's Word: " + word)
 
 if(isPalindrome(word)){
     console.log(`La parola inserita "${word}" è palindroma!`);
@@ -16,11 +17,11 @@ if(isPalindrome(word)){
 
 
 // Funzione isPalindrome per verificare se una parola è palindroma o meno
-function isPalindrome(word){
+function isPalindrome(phrase){
     let lettersArray = [];
     let lettersArrayReversed = [];
-    lettersArray = word.split("");
-    lettersArrayReversed = word.split("").reverse(); 
+    lettersArray = phrase.split('');
+    lettersArrayReversed = phrase.split('').reverse(); 
     console.log(lettersArray);
     console.log(lettersArrayReversed);
     return lettersArray.toString() === lettersArrayReversed.toString() ? true : false;
@@ -42,7 +43,7 @@ let computerNumber = getRandomInteger(1,5);
 //Prompt 2 + Exceptions
 let oddEvenChoice = ' ';
 while(oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
-    oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random").toLowerCase();
+    oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random");
 }
 
 let sum = userNumber + computerNumber;
