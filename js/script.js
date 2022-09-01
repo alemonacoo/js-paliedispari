@@ -2,7 +2,10 @@ console.log("JS OK!");
 
 // ESERCIZIO 1:
 //
-let word = prompt("Inserire una parola!");
+let word;
+while(word == null && isNaN(word)){
+    word = prompt("Inserire una parola!").toLowerCase();
+} 
 
 if(isPalindrome(word)){
     console.log(`La parola inserita "${word}" è palindroma!`);
@@ -40,7 +43,6 @@ let computerNumber = getRandomInteger(1,5);
 let oddEvenChoice = ' ';
 while(oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
     oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random").toLowerCase();
-    console.log(oddEvenChoice);
 }
 
 let sum = userNumber + computerNumber;
