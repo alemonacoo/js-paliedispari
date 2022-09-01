@@ -27,9 +27,22 @@ function isPalindrome(word){
 
 //ESERCIZIO 2:
 //
-let userNumber = parseInt(prompt("Inserire un numero da 1 a 5"));
+
+//Prompt 1 + Exceptions
+let userNumber;
+while (isNaN(userNumber) || userNumber < 1 || userNumber > 5){
+    userNumber = parseInt(prompt("Inserire un numero da 1 a 5"));
+}
+
 let computerNumber = getRandomInteger(1,5);
-let oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random").toLowerCase;
+
+//Prompt 2 + Exceptions
+let oddEvenChoice = ' ';
+while(oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
+    oddEvenChoice = prompt("Scrivere 'even' per ricevere un numero pari random oppure 'odd' per un numero dispari random");
+    console.log(oddEvenChoice);
+}
+
 let sum = userNumber + computerNumber;
 console.log('User Number: ' + userNumber);
 console.log('Computer Number: ' + computerNumber);
@@ -39,16 +52,6 @@ console.log("User's choiche: " + oddEvenChoice);
 if(oddEvenChoice === isOddEven(sum)){
     console.log(sum);
     console.log("USER WINS!!")
-
-    //Exception 1:
-} else if(isNaN(userNumber) || userNumber < 1 || userNumber > 5){
-    console.log("Per favore, inserisci un numero corretto!")
-
-    // Exception 2:
-} else if (oddEvenChoice != 'even' && oddEvenChoice != 'odd'){
-    console.log("Per favore, inserisci 'odd' o 'even' in modo corretto!");
-
-
 } else{
     console.log(sum);
     console.log("COMPUTER WINS!!")
