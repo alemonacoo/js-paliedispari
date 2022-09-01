@@ -2,8 +2,8 @@ console.log("JS OK!");
 
 // ESERCIZIO 1:
 //
-let word = ' ';
-while(word == null || !isNaN(word) || word == ' '){
+let word;
+while(word == null || !isNaN(word)){
     word = prompt("Inserire una parola!");
 } 
 console.log("User's Word: " + word)
